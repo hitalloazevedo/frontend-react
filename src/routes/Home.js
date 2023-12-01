@@ -1,3 +1,10 @@
+import { useNavigate } from "react-router"
+
 export default function Home() {
-    return <div>home</div>
+    const navigate = useNavigate()
+    return(
+        <>
+            <a href={navigate('/login')}>login</a>
+        </>
+    )
 }
