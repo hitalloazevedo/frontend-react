@@ -5,6 +5,7 @@ import getProducts from "../utils/getProducts"
 import newProduct from '../utils/newProduct'
 import { useNavigate } from "react-router"
 import jwt from 'jsonwebtoken'
+import { Link } from "react-router-dom"
 
 export default function RenderProducts() {
 

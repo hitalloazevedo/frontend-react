@@ -7,7 +7,7 @@ export default function newProduct(cod, description, size){
     <td data-size>${size}</td>
     <td data-control>
     <ul class="tabela__botoes-controle">
-    <li><a href="../pages/editar.html?id=${cod}" class="botao-simples botao-simples--editar">Editar</a></li>
+    <li><a class="botao-simples botao-simples--editar"><Link to={'/editar/${cod}'}>Editar</Link></a></li>
     <li><button class="botao-simples botao-simples--excluir" type="button">Excluir</button></li>
     </ul>
     </td>
