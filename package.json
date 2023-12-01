@@ -1,5 +1,6 @@
 {
   "name": "client2",
+  "homepage": "https://hitalloazevedo.github.io/frontend-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,6 +9,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "crypto-browserify": "^3.12.0",
+    "gh-pages": "^6.1.0",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
     "react": "^18.2.0",
@@ -23,6 +25,8 @@
     "yarn": "^1.22.21"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-scripts test",
