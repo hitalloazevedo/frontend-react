@@ -43,6 +43,7 @@ export default function RenderProducts() {
                     else {
                         if (e.target.classList.contains('botao-simples--editar')) {
                             navigate(`/editar?id=${id}`)
+                            // window.location.href = `/editar?id=${id}`
                         }
                 }
             })

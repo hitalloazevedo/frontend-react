@@ -23,21 +23,17 @@ export default function Edit() {
                 navigate('/login')    
             }
 
-            window.addEventListener('load', async () => {
-                const codField = document.querySelector('#codeInput')
-                const descriptionField = document.querySelector('#descriptionInput')
-                const sizeField = document.querySelector('#sizeInput')
-                loadInputContent(codField, descriptionField, sizeField, id)
+            const codField = document.querySelector('#codeInput')
+            const descriptionField = document.querySelector('#descriptionInput')
+            const sizeField = document.querySelector('#sizeInput')
+            loadInputContent(codField, descriptionField, sizeField, id)
 
-                const res = await LoadData(id)
-                console.log(res)
-
+            LoadData(id).then(res => {
                 const resData = {
                             codeInput: res.cod,
                             descriptionInput: res.description,
                             sizeInput: res.size
                 }
-
                 setData(resData)
             })
         }
