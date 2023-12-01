@@ -9,6 +9,7 @@ async function getProducts() {
         })
 
     const body = await res.json()
+    console.log(body)
     return body
 }
 

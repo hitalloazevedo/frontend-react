@@ -21,11 +21,7 @@ export default function RenderProducts() {
             const display = document.querySelector('.display')
         
             getProducts().then(products => {
-                // render(products, display, newProduct)
-                console.log('aqui')
-                setTimeout(() =>{
-                    render(products, display, newProduct)
-                }, 4000)
+                render(products, display, newProduct)
             })
     
             display.addEventListener('click', async (e) => {
@@ -66,4 +62,11 @@ export default function RenderProducts() {
                         <td>Descrição</td>
                         <td>Tamanho</td>
                         <td>Ação</td>
-       
+                    </tr>
+                </thead>
+                <tbody className="display">
+                </tbody>
+            </table>
+        </>
+    )
+}
