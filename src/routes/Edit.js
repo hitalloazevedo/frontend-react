@@ -8,10 +8,12 @@ import jwt from 'jsonwebtoken'
 export default function Edit() {
     const url = new URL(window.location.href)
     const id = url.searchParams.get('id')
-    
+
     const navigate = useNavigate()
+    const [itemId, setItemId] = useState(null)
 
     useEffect(() => {
+        setItemId(id)
         const token = localStorage.getItem('jwt')
         if (!token) {
             navigate('/login')
@@ -26,7 +28,7 @@ export default function Edit() {
             const codField = document.querySelector('#codeInput')
             const descriptionField = document.querySelector('#descriptionInput')
             const sizeField = document.querySelector('#sizeInput')
-            loadInputContent(codField, descriptionField, sizeField, id)
+            loadInputContent(codField, descriptionField, sizeField, itemId)
 
             LoadData(id).then(res => {
                 const resData = {
@@ -37,7 +39,7 @@ export default function Edit() {
                 setData(resData)
             })
         }
-    }, [navigate, id])
+    }, [navigate, itemId])
 
     const [data, setData] = useState({
         codeInput: '',
@@ -47,7 +49,7 @@ export default function Edit() {
 
     function submit(e, id) {
         e.preventDefault()
-        editProduct(data.codeInput, data.descriptionInput, data.sizeInput, id)
+        editProduct(data.codeInput, data.descriptionInput, data.sizeInput, itemId)
     }
 
     function handle(e) {
@@ -56,19 +58,9 @@ export default function Edit() {
         setData(newData)
     }
 
-    // window.addEventListener('load', async () => {
-    //     const res = await LoadData(id)
-    //     const resData = {
-    //             codeInput: res.cod,
-    //             descriptionInput: res.description,
-    //             sizeInput: res.size
-    //     }
-    //     setData(resData)
-    // })
-
     return (
         <>
-            <form id="new-item-form" onSubmit={async (e) => await submit(e, id)}>
+            <form id="new-item-form" onSubmit={async (e) => await submit(e, itemId)}>
                 <h2>Editar Produto</h2>
                 <div className="input-field">
                     <label htmlFor="codeInput">Código</label>
