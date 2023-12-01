@@ -1,10 +1,11 @@
 import { useNavigate } from "react-router"
+import { Link } from "react-router-dom"
 
 export default function Home() {
     const navigate = useNavigate()
     return(
         <>
-            <a href={navigate('/login')}>login</a>
+            <Link to={'/login'}>login</Link>
         </>
     )
 }
