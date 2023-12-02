@@ -52,7 +52,7 @@ export default function Cadastrar() {
     return (
         <>
             <Header></Header>
-            <Form title='Cadastrar Produto' type='Cadastrar' funcHandle={handle} funcSubmit={submit}></Form>
+            <Form title='Cadastrar Novo Produto' type='Cadastrar' funcHandle={handle} funcSubmit={submit}></Form>
         </>
     )
 }
