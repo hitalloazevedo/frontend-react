@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import LoginForm from '../components/LoginForm'
-import { redirect, useNavigate } from 'react-router'
+import { useNavigate } from 'react-router'
 import Header from '../components/Header'
+import style from '../assets/css/login.module.css'
 
 const url = 'https://api-bfk4.onrender.com'
 
@@ -34,7 +35,7 @@ export default function Login() {
         }
     }
 
-    return <div>
+    return <div className={style.content}>
         <Header></Header>
         <LoginForm onSubmit={loginUser} setEmail={setEmail} setPassword={setPassword}></LoginForm>
     </div>

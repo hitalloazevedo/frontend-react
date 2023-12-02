@@ -5,6 +5,7 @@ import LoadData from "../utils/loadData"
 import { useNavigate } from "react-router"
 import jwt from 'jsonwebtoken'
 import Header from "../components/Header"
+import Form from "../components/Form"
 
 export default function Edit() {
     const url = new URL(window.location.href)
@@ -62,20 +63,7 @@ export default function Edit() {
     return (
         <>  
             <Header></Header>
-            <form id="new-item-form" onSubmit={async (e) => await submit(e, itemId)}>
-                <h2>Editar Produto</h2>
-                <div className="input-field">
-                    <label htmlFor="codeInput">Código</label>
-                    <input onChange={(e) => handle(e)} type="number" id="codeInput"/>
-                    <label htmlFor="descriptionInput">Descrição</label>
-                    <input onChange={(e) => handle(e)} type="text" id="descriptionInput"/>
-                    <label htmlFor="sizeInput">Tamanho</label>
-                    <input onChange={(e) => handle(e)} type="text" id="sizeInput"/>
-                </div>
-                <div className="button-field">
-                    <input type="submit" id="btnSend" value="Editar"/>
-                </div>
-            </form>
+            <Form title='Editar Produto' type='Editar' funcHandle={handle} funcSubmit={submit}></Form>
         </>
     )
 }

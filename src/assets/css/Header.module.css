@@ -1,5 +1,5 @@
 .header {
-    background-color: rgb(123, 156, 91);
+    background-color: rgb(119, 175, 73);
     display: flex;
     justify-content: center;
     height: 80px;
@@ -7,7 +7,7 @@
 }
 
 .headercontent {
-    width: 50%;
+    width: 60%;
     height: 100%;
     display: flex;
     justify-content: space-around;
@@ -15,7 +15,8 @@
 }
 
 .headertitle {
-    color:rgb(255, 255, 255)
+    color:rgb(255, 255, 255);
+    font-size: 1.5rem;
 }
 
 .ul {
@@ -26,6 +27,7 @@
 .li {
     display: inline-block;
     font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .li a {
