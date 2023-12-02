@@ -1,0 +1,38 @@
+.header {
+    background-color: rgb(123, 156, 91);
+    display: flex;
+    justify-content: center;
+    height: 80px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.308);
+}
+
+.headercontent {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.headertitle {
+    color:rgb(255, 255, 255)
+}
+
+.ul {
+    display: flex;
+    gap: 50px;
+}
+
+.li {
+    display: inline-block;
+    font-size: 1.5rem;
+}
+
+.li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.headertitle {
+    font-size: 2rem;
+}

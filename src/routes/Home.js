@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router"
-import { Link } from "react-router-dom"
+import Header from "../components/Header"
 
 export default function Home() {
     const navigate = useNavigate()
     return(
-        <>
-            <Link to={'/login'}>login</Link>
+        <>  
+            <Header></Header>
+            <h1>Home Page</h1>
         </>
     )
 }

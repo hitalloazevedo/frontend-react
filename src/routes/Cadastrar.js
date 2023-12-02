@@ -2,6 +2,7 @@ import addProduct from "../utils/addProduct"
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router"
 import jwt from 'jsonwebtoken'
+import Header from "../components/Header"
 
 
 export default function Cadastrar() {
@@ -50,6 +51,7 @@ export default function Cadastrar() {
 
     return (
         <>
+            <Header></Header>
             <form id="new-item-form" onSubmit={async (e) => await submit(e)}>
                 <h2>Cadastrar Produto</h2>
                 <div className="input-field">

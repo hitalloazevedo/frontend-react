@@ -4,6 +4,7 @@ import editProduct from "../utils/editProduct"
 import LoadData from "../utils/loadData"
 import { useNavigate } from "react-router"
 import jwt from 'jsonwebtoken'
+import Header from "../components/Header"
 
 export default function Edit() {
     const url = new URL(window.location.href)
@@ -59,7 +60,8 @@ export default function Edit() {
     }
 
     return (
-        <>
+        <>  
+            <Header></Header>
             <form id="new-item-form" onSubmit={async (e) => await submit(e, itemId)}>
                 <h2>Editar Produto</h2>
                 <div className="input-field">

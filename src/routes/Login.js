@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import LoginForm from '../components/LoginForm'
-import { useNavigate } from 'react-router'
+import { redirect, useNavigate } from 'react-router'
+import Header from '../components/Header'
 
 const url = 'https://api-bfk4.onrender.com'
 
@@ -27,12 +28,14 @@ export default function Login() {
         if (data.user) {
             localStorage.setItem('jwt', data.jwt)
             navigate('/dashboard')
+            // redirect('/dashboard')
         } else {
             console.log(data)
         }
     }
 
     return <div>
+        <Header></Header>
         <LoginForm onSubmit={loginUser} setEmail={setEmail} setPassword={setPassword}></LoginForm>
     </div>
 }
